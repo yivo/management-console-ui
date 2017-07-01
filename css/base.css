@@ -1,0 +1,17 @@
+html, body {
+  font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size:   14px;
+  line-height: 1.42857;
+  font-weight: 400;
+  color:       #383838;
+  background:  #FFF;
+
+  /* These are recommended by Lato author. */
+  -webkit-font-smoothing:  subpixel-antialiased;
+  -moz-osx-font-smoothing: auto;
+  text-rendering:          optimizeLegibility;
+}
+
+body {
+  overflow-y: scroll;
+}
