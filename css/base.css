@@ -15,3 +15,13 @@ html, body {
 body {
   overflow-y: scroll;
 }
+
+a {
+  color:                        #439cd7;
+  text-decoration:              none;
+  -webkit-text-decoration-skip: objects;
+}
+
+a:hover {
+  text-decoration: underline;
+}
