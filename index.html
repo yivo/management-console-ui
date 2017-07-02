@@ -37,7 +37,7 @@
 
   <div id="console-flash-outlet" class="console-flash-outlet"></div>
 
-  <div id="console-loading-progress-notice" class="console-notice">
+  <div id="console-loading-progress-notice" class="console-notice js-console-notice">
     <div class="console-notice-icon">
       <img class="console-notice-icon-image" src="./img/loading-pulse.svg" alt="" width="55" height="55">
     </div>
@@ -49,7 +49,7 @@
     </div>
   </div>
 
-  <div id="console-loading-failure-notice" class="console-notice hide">
+  <div id="console-loading-failure-notice" class="console-notice js-console-notice hide">
     <div class="console-notice-icon">
       <img class="console-notice-icon-image" src="./img/icon-failure.svg" alt="" width="55" height="55">
     </div>
@@ -59,6 +59,20 @@
         Check your Internet connection and firewall.
         <br>
         Help needed? <a href="mailto:support@my-company.com">Contact us</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="zero-console-buttons-notice" class="console-notice js-console-notice hide">
+    <div class="console-notice-icon">
+      <img class="console-notice-icon-image" src="./img/icon-exclamation.svg" alt="" width="55" height="55">
+    </div>
+    <div class="console-notice-text">
+      <div class="console-notice-title">No buttons available.</div>
+      <div class="console-notice-explanation">
+        Try your luck once more!
+        <br>
+        <a href="javascript:void(0);" class="js-reload-console">Reload console</a>
       </div>
     </div>
   </div>
