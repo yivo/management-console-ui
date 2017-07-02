@@ -1,0 +1,52 @@
+.console-notice {
+
+  /* Trick to align block vertically */
+  position:    absolute;
+  top:         45%;
+  left:        0;
+  right:       0;
+  transform:   translateY(-50%);
+
+  margin:      0 auto;
+  width:       100%;
+  max-width:   600px;
+  padding:     10px;
+  text-align:  center;
+}
+
+@media (min-width: 450px) {
+  .console-notice {
+    white-space: nowrap;
+  }
+}
+
+@media (min-width: 450px) {
+  .console-notice-icon, .console-notice-text {
+    display:        inline-block;
+    text-align:     left;
+    vertical-align: middle;
+  }
+}
+
+.console-notice-icon {
+  margin: 0 0 10px 0;
+}
+
+@media (min-width: 450px) {
+  .console-notice-icon {
+    margin: 0 10px 0 0;
+  }
+}
+
+.console-notice-icon-image {
+  vertical-align: middle;
+}
+
+.console-notice-title {
+  font-size:   30px;
+  line-height: 1.2;
+}
+
+.console-notice-explanation {
+  font-size: 16px;
+}

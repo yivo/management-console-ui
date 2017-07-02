@@ -13,6 +13,7 @@
   <link rel="stylesheet" media="all" href="./css/base.css" />
   <link rel="stylesheet" media="all" href="./css/helpers.css" />
   <link rel="stylesheet" media="all" href="./css/console-flash.css" />
+  <link rel="stylesheet" media="all" href="./css/console-notice.css" />
 
   <!-- JS -->
   <script src="./js/main.js"></script>
@@ -34,6 +35,32 @@
 <body>
 
   <div id="console-flash-outlet" class="console-flash-outlet"></div>
+
+  <div id="console-loading-progress-notice" class="console-notice">
+    <div class="console-notice-icon">
+      <img class="console-notice-icon-image" src="./img/loading-pulse.svg" alt="" width="55" height="55">
+    </div>
+    <div class="console-notice-text">
+      <div class="console-notice-title">Console is loading...</div>
+      <div class="console-notice-explanation">
+        Wait a moment until we prepare everything.
+      </div>
+    </div>
+  </div>
+
+  <div id="console-loading-failure-notice" class="console-notice hide">
+    <div class="console-notice-icon">
+      <img class="console-notice-icon-image" src="./img/icon-failure.svg" alt="" width="55" height="55">
+    </div>
+    <div class="console-notice-text">
+      <div class="console-notice-title">Failed to load console.</div>
+      <div class="console-notice-explanation">
+        Check your Internet connection and firewall.
+        <br>
+        Help needed? <a href="mailto:support@my-company.com">Contact us</a>
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>
