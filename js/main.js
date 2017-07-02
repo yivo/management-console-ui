@@ -1,1 +1,5 @@
-var app = {};
+var app = {
+
+  templates: {}
+
+};

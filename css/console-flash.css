@@ -1,0 +1,36 @@
+.console-flash-outlet {
+  position:   absolute;
+  top:        0;
+  left:       0;
+  right:      0;
+  text-align: center;
+  padding:    10px 0;
+}
+
+.console-flash {
+  display:       inline-block;
+  padding:       10px;
+  white-space:   nowrap;
+  overflow:      hidden;
+  max-width:     100%;
+  text-overflow: ellipsis;
+  border:        1px solid #d5d5d5;
+  border-radius: 4px;
+  background:    #F5F7FA;
+  transform:     translateY(-150%);
+  transition:    transform 0.3s ease;
+}
+
+.console-flash.-appear {
+  transform: none;
+}
+
+.console-flash-icon {
+  vertical-align: middle;
+}
+
+.console-flash-text {
+  font-size:      16px;
+  font-weight:    500;
+  vertical-align: middle;
+}
