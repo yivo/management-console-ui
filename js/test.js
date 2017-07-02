@@ -25,3 +25,22 @@ app.on('dom-ready', function() {
     });
   }, 6000);
 });
+
+
+app.on('will-ajax', function(xhr) {
+  xhr.setRequestHeader('X-API-Key', 'XXX');
+});
+
+app.on('did-ajax', function(result, xhr, status, responseJSON) {
+  console.log(arguments);
+});
+
+app.on('dom-ready', function() {
+
+  app.utils.ajax('GET', 'http://management-console-api-mock.site/clients/1/buttons', {
+    success: function(xhr, status, responseJSON) {
+      console.log(responseJSON)
+    }
+  });
+
+});
