@@ -52,6 +52,7 @@ app.utils.ajax = (function() {
     };
 
     xhr.onerror = function() {
+      var responseJSON = parseJSON(this.response);
       runHook(options, 'failure', [this, this.status, responseJSON]);
       app.notify('did-ajax', 'failure', this, this.status, responseJSON);
     };
