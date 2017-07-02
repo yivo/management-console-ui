@@ -30,6 +30,29 @@ app.utils = {
     if (el.parentNode != null) {
       el.parentNode.removeChild(el);
     }
+  },
+
+  listenTransitionEnd: function(el, callback) {
+    var stylePropertyToEventName = {
+      WebkitTransition: 'webkitTransitionEnd',
+      MozTransition   : 'transitionend',
+      OTransition     : 'oTransitionEnd otransitionend',
+      msTransition    : 'MSTransitionEnd',
+      transition      : 'transitionend'
+    };
+
+    for (var styleProperty in stylePropertyToEventName) {
+      if (el.style[styleProperty] != null) {
+
+        function fn() {
+          el.removeEventListener(stylePropertyToEventName[styleProperty], fn);
+          callback();
+        }
+
+        el.addEventListener(stylePropertyToEventName[styleProperty], fn);
+        break;
+      }
+    }
   }
 
 };
