@@ -37,6 +37,15 @@ app.utils.ajax = (function() {
     }
   }
 
+  function buildRequestResult(xhr) {
+    return {
+      xhr:          xhr,
+      status:       xhr.status,
+      response:     xhr.response,
+      responseJSON: parseJSON(xhr.response)
+    }
+  }
+
   return function(method, url, options) {
     if (options == null) { options = {}; }
 
@@ -45,16 +54,31 @@ app.utils.ajax = (function() {
     xhr.open(method, url, true);
 
     xhr.onload = function() {
-      var responseJSON = parseJSON(this.response);
-      var result = this.status >= 200 && this.status < 400 ? 'success' : 'failure';
-      runHook(options, result, [this, this.status, responseJSON]);
-      app.notify('did-ajax', result, this, this.status, responseJSON);
+      var request     = buildRequestResult(xhr);
+      request.success = this.status >= 200 && this.status < 400;
+      request.failure = !request.success;
+
+      runHook(options, request.success ? 'success' : 'failure', [request]);
+      app.notify('did-ajax', request);
     };
 
     xhr.onerror = function() {
-      var responseJSON = parseJSON(this.response);
-      runHook(options, 'failure', [this, this.status, responseJSON]);
-      app.notify('did-ajax', 'failure', this, this.status, responseJSON);
+      var request     = buildRequestResult(xhr);
+      request.success = false;
+      request.failure = !request.success;
+
+      runHook(options, 'failure', [request]);
+      app.notify('did-ajax', request);
+    };
+
+    xhr.onabort = function() {
+      var request     = buildRequestResult(xhr);
+      request.success = false;
+      request.failure = !request.success;
+      request.aborted = true;
+
+      runHook(options, 'failure', [request]);
+      app.notify('did-ajax', request);
     };
 
     send(xhr, options);
