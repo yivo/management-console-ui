@@ -13,6 +13,23 @@ app.utils = {
     return function(html) {
       return (typeof html === 'string' ? html : html + '').replace(/[&<>"]/g, replacement)
     }
-  })()
+  })(),
+
+  renderHTMLElement: function(html) {
+    var div = document.createElement('div');
+    div.innerHTML = html;
+    return div.firstElementChild;
+  },
+
+  emptyHTMLElement: function(el) {
+    while (el.firstChild) { el.removeChild(el.firstChild); }
+    return el;
+  },
+
+  removeHTMLElement: function(el) {
+    if (el.parentNode != null) {
+      el.parentNode.removeChild(el);
+    }
+  }
 
 };
