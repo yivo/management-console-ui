@@ -14,6 +14,7 @@
   <link rel="stylesheet" media="all" href="./css/helpers.css" />
   <link rel="stylesheet" media="all" href="./css/console-flash.css" />
   <link rel="stylesheet" media="all" href="./css/console-notice.css" />
+  <link rel="stylesheet" media="all" href="./css/console-status.css" />
 
   <!-- JS -->
   <script src="./js/main.js"></script>
@@ -29,6 +30,7 @@
 
   <!-- JS:APP -->
   <script src="./js/app/flashes-manager.js"></script>
+  <script src="./js/app/date-time.js"></script>
 
   <script src="./js/test.js"></script>
 
@@ -74,6 +76,13 @@
         <br>
         <a href="javascript:void(0);" class="js-reload-console">Reload console</a>
       </div>
+    </div>
+  </div>
+
+  <div id="console-status" class="console-status hide">
+    <div class="console-status-wrapper">
+      <span id="date-time" class="console-status-date-time"></span>
+      <a href="javascript:void(0);" class="js-reload-console">Reload console</a>
     </div>
   </div>
 

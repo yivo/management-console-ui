@@ -1,0 +1,32 @@
+.console-status {
+  position:   fixed;
+  bottom:     0;
+  left:       0;
+  right:      0;
+  background: #F5F7FA;
+  border-top: 1px solid #d5d5d5;
+  transition: transform ease 0.2s, opacity ease 0.5s;
+  opacity:    0;
+  font-size:  16px;
+}
+
+.console-status.-appear {
+  opacity: 1;
+}
+
+@media (max-width: 485px) {
+  .console-status {
+    text-align: center;
+  }
+}
+
+.console-status-wrapper {
+  width:     100%;
+  max-width: 900px;
+  padding:   15px;
+  margin:    0 auto;
+}
+
+.console-status-date-time {
+  margin-right: 15px;
+}
