@@ -53,6 +53,18 @@ app.utils = {
         break;
       }
     }
+  },
+
+  // 1. Trims leading and trailing whitespace.
+  // 2. Collapses inner whitespace in one space.
+  squish: function(str) {
+    return str.replace(/\s+/g, ' ').replace(/(?:^\s+)|(?:\s+$)/g, '');
+  },
+
+  each: function(ary, fn, ctx) {
+    for (var i = 0, l = ary.length; i < l; ++i) {
+      fn.call(ctx, ary[i], i);
+    }
   }
 
 };
