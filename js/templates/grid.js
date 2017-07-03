@@ -18,7 +18,7 @@ app.templates.grid = (function() {
     return app.templates.gridLayout(data, function() {
       return data.buttons.map(function(button) {
         return app.templates.gridCell(cell, function() {
-          return app.templates.gridButton(button);
+          return app.templates.gridAction(button);
         });
       });
     });
@@ -44,13 +44,17 @@ app.templates.gridCell = function(cell, next) {
   ].join('');
 };
 
-app.templates.gridButton = function(button) {
+app.templates.gridAction = function(button) {
   return [
-    '<div class="console-grid-button">',
-      '<button class="console-grid-button-action" type="button">',
+    '<div class="console-grid-action">',
+      '<button ' +
+        'class="console-grid-action-button" ' +
+        'type="button" ' +
+        'data-button-id="' + app.utils.escapeHTML(button.id) +
+      '">',
         app.utils.escapeHTML(button.title),
       '</button>',
-      '<button class="console-grid-button-info" type="button"></button>',
+      '<button class="console-grid-action-info" type="button"></button>',
     '</div>'
   ].join('');
 };
