@@ -53,12 +53,12 @@ app.templates.gridAction = function(button) {
       '<button ' +
         'class="console-grid-action-button" ' +
         'type="button" ' +
-        'data-button-id="' + esc(button.id) +
-      '">',
+        'data-button-id="' + esc(button.id) + '"' +
+      '>',
         esc(button.title),
       '</button>',
 
-      '<button class="console-grid-action-info console-grid-action-tooltip" ' +
+      '<button class="console-grid-action-info console-grid-action-tooltip js-console-action-info" ' +
         'type="button" ' +
         'data-tooltip-text="' + esc(app.utils.truncateString(button.description, 200)) + '"' +
       '>' +

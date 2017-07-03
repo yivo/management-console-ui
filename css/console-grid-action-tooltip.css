@@ -59,7 +59,7 @@
   }
 }
 
-.console-grid-action-tooltip:focus:after {
+.console-grid-action-tooltip.-active:after {
   display:         table-cell;
   border-collapse: separate;
 }
@@ -82,7 +82,7 @@
   right:          50%;
 }
 
-.console-grid-action-tooltip:focus:before {
+.console-grid-action-tooltip.-active:before {
   display: inline-block;
 }
 
