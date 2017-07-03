@@ -66,6 +66,7 @@
     padding:      15px;
     margin-right: 40px;
     width:        calc(100% - 40px);
+    font-size:    15px;
   }
 
   .console-grid-action-info {
