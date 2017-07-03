@@ -21,8 +21,8 @@
     this.clearGrid();
 
     this.xhr = app.utils.ajax('GET', 'http://management-console-api-mock.site/clients/1/buttons', {
-      success: this.emulateSmoothLoad(this.onLoadSuccess, 1000),
-      failure: this.emulateSmoothLoad(this.onLoadFailure, 1000)
+      success: app.utils.emulateSmoothLoad(this.onLoadSuccess, 1000),
+      failure: app.utils.emulateSmoothLoad(this.onLoadFailure, 1000)
     });
 
     return this;
@@ -64,21 +64,5 @@
 
   Console.prototype.clearGrid = function() {
     app.utils.emptyHTMLElement(this.outlet);
-  };
-
-  Console.prototype.emulateSmoothLoad = function(fn, duration) {
-    var started = Date.now();
-
-    return function() {
-      var now = Date.now(), ctx = this;
-
-      if (now - started <= duration) {
-        var i = -1, args = [];
-        while (++i < arguments.length) { args.push(arguments[i]) }
-        setTimeout(function() { fn.apply(ctx, args) }, duration - (now - started));
-      } else {
-        fn.apply(ctx, arguments);
-      }
-    }
   };
 })();

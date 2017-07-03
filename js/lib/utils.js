@@ -65,6 +65,28 @@ app.utils = {
     for (var i = 0, l = ary.length; i < l; ++i) {
       fn.call(ctx, ary[i], i);
     }
+  },
+
+  // Returns a wrapper function that, when executed, checks how much
+  // time passed since time wrapper created.
+  //
+  // timePassed = created at - now.
+  // If timePassed < duration : creates a timer which invokes target function in duration - timePassed.
+  // If timePassed >= duration: immediately invokes target function.
+  emulateSmoothLoad: function(fn, duration) {
+    var started = Date.now();
+
+    return function() {
+      var now = Date.now(), ctx = this;
+
+      if (now - started <= duration) {
+        var i = -1, args = [];
+        while (++i < arguments.length) { args.push(arguments[i]) }
+        setTimeout(function() { fn.apply(ctx, args) }, duration - (now - started));
+      } else {
+        fn.apply(ctx, arguments);
+      }
+    }
   }
 
 };
