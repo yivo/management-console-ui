@@ -34,9 +34,11 @@
   /* https://developer.mozilla.org/en-US/docs/Web/CSS/width#max-content */
   width:     -webkit-max-content;
   width:     -moz-max-content;
+  width:     -o-max-content;
   width:     max-content;
 
   /* Once more, if max-content fails. */
+  min-width: 150px;
   max-width: 250px;
 
   /* Base align properties. */
