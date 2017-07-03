@@ -45,16 +45,25 @@ app.templates.gridCell = function(cell, next) {
 };
 
 app.templates.gridAction = function(button) {
+  var esc = app.utils.escapeHTML;
+
   return [
     '<div class="console-grid-action">',
+
       '<button ' +
         'class="console-grid-action-button" ' +
         'type="button" ' +
-        'data-button-id="' + app.utils.escapeHTML(button.id) +
+        'data-button-id="' + esc(button.id) +
       '">',
-        app.utils.escapeHTML(button.title),
+        esc(button.title),
       '</button>',
-      '<button class="console-grid-action-info" type="button"></button>',
+
+      '<button class="console-grid-action-info console-grid-action-tooltip" ' +
+        'type="button" ' +
+        'data-tooltip-text="' + esc(app.utils.truncateString(button.description, 200)) + '"' +
+      '>' +
+      '</button>',
+
     '</div>'
   ].join('');
 };

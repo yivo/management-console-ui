@@ -87,6 +87,10 @@ app.utils = {
         fn.apply(ctx, arguments);
       }
     }
+  },
+
+  truncateString: function(str, max) {
+    return str.length > max ? str.substr(0, max) + '...' : str;
   }
 
 };
