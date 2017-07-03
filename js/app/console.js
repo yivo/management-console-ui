@@ -45,6 +45,17 @@
     }
   };
 
+  Console.prototype.performAction = function(buttonID) {
+    app.notify('will-perform-console-action');
+
+    app.utils.ajax('POST', 'http://management-console-api-mock.site/clients/1/events', {
+      data:    { buttonID: buttonID },
+      success: app.utils.emulateSmoothLoad(function() { app.notify('did-perform-console-action') }, 600),
+      failure: app.utils.emulateSmoothLoad(function() { app.notify('did-fail-perform-console-action') }, 600)
+    });
+    return this;
+  };
+
   Console.prototype.renderGrid = function(data) {
     this.clearGrid();
 

@@ -51,7 +51,7 @@ app.templates.gridAction = function(button) {
     '<div class="console-grid-action">',
 
       '<button ' +
-        'class="console-grid-action-button" ' +
+        'class="console-grid-action-button js-console-action-button" ' +
         'type="button" ' +
         'data-button-id="' + esc(button.id) + '"' +
       '>',
