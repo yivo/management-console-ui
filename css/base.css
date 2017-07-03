@@ -25,3 +25,12 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+@-moz-document url-prefix() {
+  /* Kill phantom spacing and dotted border that appears in Firefox. */
+  ::-moz-focus-inner, ::-moz-focus-outer, \:-moz-focusring {
+    border:  0;
+    padding: 0;
+    outline: 0;
+  }
+}
