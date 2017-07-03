@@ -43,7 +43,7 @@
 
   /* Base align properties. */
   position:  absolute;
-  transform: translateX(-75%);
+  transform: translateX(-80%);
 }
 
 .console-grid-action-tooltip:after {
