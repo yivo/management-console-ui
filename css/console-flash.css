@@ -1,10 +1,10 @@
 .console-flash-outlet {
-  position:   absolute;
-  top:        0;
+  position:   fixed;
+  top:        10px;
   left:       0;
   right:      0;
   text-align: center;
-  padding:    10px 0;
+  z-index:    1;
 }
 
 .console-flash {
