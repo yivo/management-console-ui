@@ -1,0 +1,104 @@
+/* TOOLTIP TEXT */
+.console-grid-action-tooltip:after {
+
+  /* Without font reset tooltip will inherit font properties from it's holder. */
+  font-style:      normal;
+  font-variant:    normal;
+  font-weight:     300;
+  font-stretch:    normal;
+  font-size:       14px;
+
+  text-align:      center;
+  text-decoration: none;
+  text-shadow:     none;
+  text-transform:  none;
+  letter-spacing:  normal;
+
+  /* Handle too long words. */
+  word-break:      break-word;
+  word-wrap:       normal;
+
+  /* Support new lines. */
+  white-space:     pre-line;
+
+  padding:        5px 8px;
+  content:        attr(data-tooltip-text);
+  display:        none;
+  pointer-events: none;
+  z-index:        1;
+  color:          #FFF;
+  background:     rgba(0,0,0,.8);
+  border-radius:  4px;
+
+  /* Used with display: table-cell */
+  /* https://developer.mozilla.org/en-US/docs/Web/CSS/width#max-content */
+  width:     -webkit-max-content;
+  width:     -moz-max-content;
+  width:     max-content;
+
+  /* Once more, if max-content fails. */
+  max-width: 250px;
+
+  /* Base align properties. */
+  position:  absolute;
+  transform: translateX(-75%);
+}
+
+.console-grid-action-tooltip:after {
+  margin-bottom: 6px;
+  bottom:        100%;
+  left:          0;
+}
+
+@media (max-width: 485px) {
+  .console-grid-cell:first-child .console-grid-action-tooltip:after {
+    margin-bottom: auto;
+    margin-top:    6px;
+    bottom:        auto;
+    top:           100%;
+  }
+}
+
+.console-grid-action-tooltip:focus:after {
+  display:         table-cell;
+  border-collapse: separate;
+}
+
+/* TOOLTIP ARROW */
+.console-grid-action-tooltip:before {
+  display:        none;
+  vertical-align: middle;
+  z-index:        1;
+  width:          0;
+  height:         0;
+  content:        '';
+  color:          rgba(0,0,0,.8);
+  border:         6px solid rgba(0, 0, 0, 0);
+  margin-right:   -6px;
+  pointer-events: none;
+
+  /* Base align properties. */
+  position:       absolute;
+  right:          50%;
+}
+
+.console-grid-action-tooltip:focus:before {
+  display: inline-block;
+}
+
+/* Align arrow up. */
+.console-grid-action-tooltip:before {
+  border-top-color: rgba(0,0,0,.8);
+  top:              -6px;
+  bottom:           auto;
+}
+
+/* Align arrow down. */
+@media (max-width: 485px) {
+  .console-grid-cell:first-child .console-grid-action-tooltip:before {
+    border-top-color:    transparent;
+    border-bottom-color: rgba(0,0,0,.8);
+    top:                 auto;
+    bottom:              -6px;
+  }
+}
