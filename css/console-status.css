@@ -27,6 +27,13 @@
   margin:    0 auto;
 }
 
+@media (max-width: 485px) {
+  .console-status-wrapper {
+    padding-top:    8px;
+    padding-bottom: 8px;
+  }
+}
+
 .console-status-date-time {
   margin-right: 15px;
 }
