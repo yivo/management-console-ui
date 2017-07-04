@@ -8,6 +8,9 @@
 * no code preprocessing or post-processing
 * no build automation
 
+## API details
+API details can be found here: [management-console-api-mock](https://github.com/yivo/management-console-api-mock).
+
 ## Screenshots
 
 ![screen shot 2017-07-04 at 12 58 09 pm](https://user-images.githubusercontent.com/7421323/27825680-00a06056-60b9-11e7-8d52-55086e7d87e0.png)
