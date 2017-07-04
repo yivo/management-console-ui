@@ -24,6 +24,8 @@ API details can be found here: [management-console-api-mock](https://github.com/
 * iOS Safari 8.3
 * iOS Safari 9.0
 * iOS Safari 9.3
+* iOS Safari 10.3
+* iOS Chrome 59
 * OS X Sierra Chrome 59
 * OS X Sierra Firefox 54
 * OS X Sierra Opera 43
